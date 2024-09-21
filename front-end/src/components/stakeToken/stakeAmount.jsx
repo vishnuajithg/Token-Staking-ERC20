@@ -8,8 +8,10 @@ import StakingContext from '../../Context/StakingContext';
 const stakeAmount = () => {
     const [transactionStatus, setTransactionStatus] = useState()
     const {stakingContract} = useContext(Web3Context)
-    const {isReload,SetIsReload} = useContext(StakingContext)
+    const {isReload,setIsReload} = useContext(StakingContext)
     const  stakeAmountRef = useRef();
+
+    
     const stakeToken = async(e)=>{
         e.preventDefault();
         const amount = stakeAmountRef.current.value.trim()
@@ -27,7 +29,7 @@ const stakeAmount = () => {
             if(receipt.status===1){
 
                 setTransactionStatus("Transaction is success")
-                SetIsReload(!isReload)
+                // setIsReload(!isReload)
                 setTimeout(()=>{
                     setTransactionStatus("") 
                 },5000)
