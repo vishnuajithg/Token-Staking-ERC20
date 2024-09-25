@@ -23,12 +23,12 @@
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "_stakingToken",
+				"name": "stakingToken",
 				"type": "address"
 			},
 			{
 				"internalType": "address",
-				"name": "_rewardToken",
+				"name": "rewardToken",
 				"type": "address"
 			}
 		],
@@ -74,19 +74,6 @@
 		"type": "event"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "amount",
-				"type": "uint256"
-			}
-		],
-		"name": "withdraw",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
 		"anonymous": false,
 		"inputs": [
 			{
@@ -104,6 +91,19 @@
 		],
 		"name": "Withdrawn",
 		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "withdrawStakedTokens",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
 	},
 	{
 		"inputs": [
@@ -197,7 +197,20 @@
 	},
 	{
 		"inputs": [],
-		"name": "rewardToken",
+		"name": "s_rewardToken",
+		"outputs": [
+			{
+				"internalType": "contract IERC20",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "s_stakingToken",
 		"outputs": [
 			{
 				"internalType": "contract IERC20",
@@ -222,19 +235,6 @@
 				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "stakingToken",
-		"outputs": [
-			{
-				"internalType": "contract IERC20",
-				"name": "",
-				"type": "address"
 			}
 		],
 		"stateMutability": "view",

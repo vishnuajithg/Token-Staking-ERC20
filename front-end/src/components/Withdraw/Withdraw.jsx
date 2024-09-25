@@ -20,7 +20,7 @@ const WithdrawStakeAmount = () => {
         const amountToWithdraw = ethers.parseUnits(amount,18).toString();
         // console.log(amount)
         try {
-            const transaction = await stakingContract.withdraw(amountToWithdraw)
+            const transaction = await stakingContract.withdrawStakedTokens(amountToWithdraw)
             console.log(transaction)
             setTransactionStatus("Transaction is in pending...")
             // setIsReload(!isReload)
